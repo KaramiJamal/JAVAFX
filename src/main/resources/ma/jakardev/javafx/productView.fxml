@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-padding: 15px;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="ma.jakardev.javafx.presentation.controllers.ProductController">
+    <top>
+        <VBox prefHeight="138.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+            <children>
+                <HBox prefHeight="100.0" prefWidth="200.0">
+                    <children>
+                        <VBox prefHeight="100.0" prefWidth="293.0">
+                            <children>
+                                <Label prefHeight="30.0" prefWidth="112.0" text="   Nom : " />
+                                <Label layoutX="10.0" layoutY="10.0" prefHeight="27.0" prefWidth="72.0" text="   Référence : " />
+                                <Label layoutX="10.0" layoutY="28.0" prefHeight="22.0" prefWidth="106.0" text="   Price : " />
+                                <Label layoutX="10.0" layoutY="61.0" prefHeight="29.0" prefWidth="106.0" text="   Catégorie : " />
+                            </children>
+                        </VBox>
+                        <VBox prefHeight="100.0" prefWidth="305.0">
+                            <children>
+                                <TextField fx:id="name" />
+                                <TextField fx:id="reference" layoutX="10.0" layoutY="10.0" />
+                                <TextField fx:id="price" layoutX="10.0" layoutY="36.0" />
+                                <ComboBox fx:id="category" prefWidth="150.0" />
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+                <HBox prefHeight="44.0" prefWidth="600.0" style="-fx-padding: 5px;">
+                    <children>
+                        <Label prefHeight="26.0" prefWidth="70.0" text="  Rechercher" />
+                        <TextField  fx:id="search" />
+                        <Button onAction="#addProduct" mnemonicParsing="false" text="Ajouter" />
+                        <Button onAction="#updateProduct" layoutX="188.0" layoutY="10.0" mnemonicParsing="false" text="Modifier" />
+                        <Button onAction="#deleteProduct" layoutX="240.0" layoutY="10.0" mnemonicParsing="false" text="Supprimer" />
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </top>
+    <center>
+        <TableView fx:id="tableDataProduct" prefHeight="238.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+            <columns>
+                <TableColumn fx:id="columnID" prefWidth="75.0" text="ID" />
+                <TableColumn fx:id="columnNom" prefWidth="126.4000244140625" text="Nom" />
+                <TableColumn fx:id="columnRef" prefWidth="136.79998779296875" text="Référence" />
+                <TableColumn fx:id="columnPrice" prefWidth="132.79998779296875" text="Prix" />
+                <TableColumn fx:id="columnCat" prefWidth="130.39996337890625" text="Catégorie" />
+            </columns>
+        </TableView>
+    </center>
+</BorderPane>
